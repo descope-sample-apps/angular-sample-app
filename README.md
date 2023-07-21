@@ -19,6 +19,8 @@ This sample app demonstrates how to integrate the Descope authentication service
 
 ## Installation 💿
 
+> **Note:** If you don't already have the Angular CLI, install it before you follow the rest of the guide. You can do so with the following command: `npm install -g @angular/cli`
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/YourUsername/descope-angular-app.git
