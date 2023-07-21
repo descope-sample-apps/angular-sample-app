@@ -34,15 +34,15 @@ npm install
 
 3. Setup environment variables:
 
-    * Create a `environment.ts` file at the root of the project.
-    * Fill in the variable `descopeProjectId` with your Project ID from [Project Settings](https://app.descope.com/settings/project) in the Console.
+* Create a `environment.ts` file at the root of the project.
+* Fill in the variable `descopeProjectId` with your Project ID from [Project Settings](https://app.descope.com/settings/project) in the Console.
     
-    ```javascript
-    export const environment = {
-        production: false,
-        descopeProjectId: "<Descope Project ID>",
-    };
-    ```
+```javascript
+export const environment = {
+    production: false,
+    descopeProjectId: "<Descope Project ID>",
+};
+```
 
 ## Running the Application 🚀
 

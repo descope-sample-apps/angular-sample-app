@@ -1,27 +1,57 @@
 import { Injectable } from '@angular/core';
-import Descope from '@descope/web-js-sdk';
-import { environment } from '../environments/environment'; 
+import { environment } from '../environments/environment';
+
+declare var Descope: any;
+
+export interface User {
+  name: string;
+  email: string;
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   sdk: any;
 
-  constructor() { 
-    this.sdk = Descope({ projectId: environment.descopeProjectId, persistTokens: true, autoRefresh: true });
+  constructor() {
+    this.sdk = Descope({
+      projectId: environment.descopeProjectId,
+      persistTokens: true,
+      autoRefresh: true,
+    });
   }
 
-  validateSession(): Promise<any> {
+  async getUserData(): Promise<User> {
+    try {
+      await this.sdk.refresh();
+      const sessionToken = this.sdk.getSessionToken();
+      if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
+        const profile = await this.sdk.me();
+        console.log(profile);
+        const user: User = {
+          name: profile.data.name || 'No Name Set',
+          email: profile.userEmail || 'test@descope.com',
+        };
+        console.log(user);
+        return user;
+      } else {
+        throw new Error('Failed to validate session. User is not logged in.');
+      }
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async validateSession(): Promise<any> {
     return this.sdk.refresh().then(() => {
       const sessionToken = this.sdk.getSessionToken();
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
-        // User is logged in
         return "You're logged in!";
       } else {
-        let err = new Error("Failed to validate session. User is not logged in.");
-        err.status = 401;
+        let err = new Error(
+          'Failed to validate session. User is not logged in.'
+        );
         throw err;
       }
     });
