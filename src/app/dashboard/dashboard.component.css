@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+  }
+  
+  .user-info-card, .activity-feed {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2em;
+    width: 45%;
+  }
+  
+  .user-info-card h2, .activity-feed h2 {
+    margin-top: 0;
+  }
+  
+  .activity-feed ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .activity-feed ul li {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+  }

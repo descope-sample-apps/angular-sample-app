@@ -1,0 +1,17 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="user-info-card">
+      <h2>User Information</h2>
+      <p><strong>Name:</strong> {{user.name}}</p>
+      <p><strong>Email:</strong> {{user.email}}</p>
+    </div>
+  
+    <div class="activity-feed">
+      <h2>Recent Activities</h2>
+      <ul>
+        <li *ngFor="let activity of activityFeed">
+          {{activity}}
+        </li>
+      </ul>
+    </div>
+  </div>

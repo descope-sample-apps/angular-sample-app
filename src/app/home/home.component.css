@@ -1,0 +1,16 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul li {
+    margin-left: 15px;
+  }
