@@ -1,20 +1,23 @@
-# Descope Angular App
+<img width="1100" alt="Monosnap Github Profile Header Generator 2023-07-20 23-09-34" src="https://github.com/descope-sample-apps/angular-webjs-sample-app/assets/32936811/4fb5360a-ef27-4e5f-b2be-ba21c5dca7d9">
 
-This project demonstrates how to integrate the Descope authentication service into an Angular application. This application includes a login screen using Descope Web Component, a user dashboard to display user information, and a navigation bar that dynamically adjusts based on the user's authentication state.
+---
 
-## Table of Contents
+This sample app demonstrates how to integrate the Descope authentication service into an Angular application. This application includes a login screen using Descope Web Component, a user dashboard to display user information and a navigation bar that dynamically adjusts based on the user's authentication state.
+
+## Table of Contents 📝
 
 1. [Features](#features)
 2. [Installation](#installation)
 3. [Running the Application](#running-the-application)
 4. [Issue Reporting](#issue-reporting)
 
-## Features
+## Features ✨
 
 * **Descope Login**: Users can login with their Descope credentials.
 * **User Dashboard**: After logging in, users are redirected to a dashboard which displays their information fetched using the Descope SDK.
 * **Navbar**: A navigation bar that includes a login/logout button, which adjusts its display based on whether a user is logged in or not.
-## Installation
+
+## Installation 💿
 
 1. Clone the repository:
 ```bash
@@ -39,7 +42,7 @@ npm install
     };
     ```
 
-## Running the Application
+## Running the Application 🚀
 
 To start the application, run:
 
@@ -49,10 +52,10 @@ ng serve
 
 Navigate to `http://localhost:4200/` in your browser.
 
-## Issue Reporting
+## Issue Reporting ⚠️
 
 This project is a simple demonstration of integrating Descope into an Angular application. For any issues or suggestions, feel free to open an issue in the GitHub repository. 
 
-## License
+## License 📜
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
