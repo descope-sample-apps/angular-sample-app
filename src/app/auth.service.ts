@@ -6,6 +6,8 @@ declare var Descope: any;
 export interface User {
   name: string;
   email: string;
+  role: string;
+  picture: string;
 }
 
 @Injectable({
@@ -27,13 +29,15 @@ export class AuthService {
       await this.sdk.refresh();
       const sessionToken = this.sdk.getSessionToken();
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
-        const profile = await this.sdk.me();
+        const profile = await this.sdk.me(this.sdk.getRefreshToken());
+        console.log(profile);
         console.log(profile);
         const user: User = {
           name: profile.data.name || 'No Name Set',
           email: profile.userEmail || 'test@descope.com',
+          role: profile.data.role || 'No Role Set',
+          picture: profile.data.picture || '',
         };
-        console.log(user);
         return user;
       } else {
         throw new Error('Failed to validate session. User is not logged in.');
@@ -58,6 +62,6 @@ export class AuthService {
   }
 
   async logout(): Promise<void> {
-    await this.sdk.logout();
+    await this.sdk.logout(this.sdk.getRefreshToken());
   }
 }

@@ -8,7 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { GoogleChartsModule } from 'angular-google-charts';
-import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +15,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     DashboardComponent,
     HomeComponent,
-    NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    GoogleChartsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, GoogleChartsModule],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

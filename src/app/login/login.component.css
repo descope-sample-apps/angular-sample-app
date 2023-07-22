@@ -1,0 +1,13 @@
+descope-wc {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body.login-page {
+  background-color: #123456;
+}

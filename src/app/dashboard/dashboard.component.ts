@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     'Created a new project',
   ];
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService
@@ -27,7 +27,12 @@ export class DashboardComponent implements OnInit {
       })
       .catch(() => {
         this.user = null;
-        // this.router.navigate(['/login']);  // Redirect to login page if session is invalid.
+        this.router.navigate(['/login']);
       });
+  }
+
+  async logout(): Promise<void> {
+    await this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
