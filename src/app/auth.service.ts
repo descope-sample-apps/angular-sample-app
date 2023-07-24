@@ -30,8 +30,6 @@ export class AuthService {
       const sessionToken = this.sdk.getSessionToken();
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
         const profile = await this.sdk.me(this.sdk.getRefreshToken());
-        console.log(profile);
-        console.log(profile);
         const user: User = {
           name: profile.data.name || 'No Name Set',
           email: profile.userEmail || 'test@descope.com',
