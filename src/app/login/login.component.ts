@@ -1,6 +1,5 @@
-import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -8,18 +7,29 @@ import { environment } from '../../environments/environment';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements AfterViewInit {
-  descopeProjectId = environment.descopeProjectId;
+export class LoginComponent implements OnInit {
+  descopeProjectId!: string;
 
   constructor(
     private elRef: ElementRef,
     private renderer: Renderer2,
-    private router: Router,
-    private authService: AuthService
+    private router: Router
   ) {}
 
-  ngAfterViewInit(): void {
-    const wcElement = this.elRef.nativeElement.querySelector('descope-wc');
+  ngOnInit(): void {
+    this.descopeProjectId = environment.descopeProjectId;
+    this.initDescopeWc();
+  }
+
+  private initDescopeWc(): void {
+    const wcElement = this.renderer.createElement('descope-wc');
+
+    this.renderer.setAttribute(wcElement, 'project-id', this.descopeProjectId);
+    this.renderer.setAttribute(wcElement, 'flow-id', 'sign-up-or-in');
+    this.renderer.setAttribute(wcElement, 'theme', 'light');
+
+    const parentElement = this.elRef.nativeElement;
+    this.renderer.appendChild(parentElement, wcElement);
 
     const onSuccess = (e: CustomEvent) => {
       this.router.navigate(['/dashboard']);
