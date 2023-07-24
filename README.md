@@ -1,4 +1,4 @@
-<img width="1100" alt="Monosnap Github Profile Header Generator 2023-07-20 23-09-34" src="https://github.com/descope-sample-apps/angular-webjs-sample-app/assets/32936811/4fb5360a-ef27-4e5f-b2be-ba21c5dca7d9">
+<img width="1400" alt="Monosnap Github Profile Header Generator 2023-07-20 23-09-34" src="https://github.com/descope-sample-apps/angular-webjs-sample-app/assets/32936811/e4452fcf-e566-4795-bb56-2e677aa8bcf0">
 
 ---
 
