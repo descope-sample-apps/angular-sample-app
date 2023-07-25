@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   private initDescopeWc(): void {
     const wcElement = this.renderer.createElement('descope-wc');
 
-    this.renderer.setAttribute(wcElement, 'project-id', this.descopeProjectId);
-    this.renderer.setAttribute(wcElement, 'flow-id', 'sign-up-or-in');
-    this.renderer.setAttribute(wcElement, 'theme', 'light');
+    // this.renderer.setAttribute(wcElement, 'project-id', this.descopeProjectId);
+    // this.renderer.setAttribute(wcElement, 'flow-id', 'sign-up-or-in');
+    // this.renderer.setAttribute(wcElement, 'theme', 'light');
 
     const parentElement = this.elRef.nativeElement;
     this.renderer.appendChild(parentElement, wcElement);
