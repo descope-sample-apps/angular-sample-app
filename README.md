@@ -34,7 +34,8 @@ npm install
 
 3. Setup environment variables:
 
-* Create a `environment.ts` file at the root of the project.
+* Use the `environment.ts.example` file, located in `/src/environments/environment.ts.example`, and change the name to `environment.ts`.
+
 * Fill in the variable `descopeProjectId` with your Project ID from [Project Settings](https://app.descope.com/settings/project) in the Console.
     
 ```javascript
