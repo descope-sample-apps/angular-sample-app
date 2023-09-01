@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  descopeProjectId: 'P2ULUOgQ5KTPPOevZitrdUu9QDxR',
+  descopeProjectId: '<Descope Project ID>',
 };
