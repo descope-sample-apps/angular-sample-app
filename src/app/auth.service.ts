@@ -26,7 +26,6 @@ export class AuthService {
 
   async getUserData(): Promise<User> {
     try {
-      await this.sdk.refresh();
       const sessionToken = this.sdk.getSessionToken();
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
         const profile = await this.sdk.me(this.sdk.getRefreshToken());
@@ -37,6 +36,21 @@ export class AuthService {
           picture: profile.data.picture || '',
         };
         return user;
+      } else if (!sessionToken || this.sdk.isJwtExpired(sessionToken)) {
+        try {
+          await this.sdk.refresh();
+          const profile = await this.sdk.me(this.sdk.getRefreshToken());
+          const user: User = {
+            name: profile.data.name || 'No Name Set',
+            email: profile.userEmail || 'test@descope.com',
+            role: profile.data.role || 'No Role Set',
+            picture: profile.data.picture || '',
+          };
+
+          return user;
+        } catch (error) {
+          throw new Error('Failed to validate session. User is not logged in.');
+        }
       } else {
         throw new Error('Failed to validate session. User is not logged in.');
       }
