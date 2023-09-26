@@ -19,6 +19,7 @@ export class AuthService {
   constructor() {
     this.sdk = Descope({
       projectId: environment.descopeProjectId,
+      baseUrl: environment.baseURL,
       persistTokens: true,
       autoRefresh: true,
     });
