@@ -23,7 +23,7 @@ This sample app demonstrates how to integrate the Descope authentication service
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YourUsername/descope-angular-app.git
+git clone git@github.com:descope-sample-apps/angular-webjs-sample-app.git
 ```
 
 2. Install dependencies:
