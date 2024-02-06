@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
+import { DescopeAuthModule, DescopeAuthService } from '@descope/angular-sdk';
 
 declare var Descope: any;
 
@@ -17,17 +18,16 @@ export class AuthService {
   sdk: any;
 
   constructor() {
-    this.sdk = Descope({
+    this.sdk = new DescopeAuthService({
       projectId: environment.descopeProjectId,
-      baseUrl: environment.baseURL,
-      persistTokens: true,
-      autoRefresh: true,
-    });
+    })
   }
 
   async getUserData(): Promise<User> {
     try {
       const sessionToken = this.sdk.getSessionToken();
+      console.log("here")
+      console.log(sessionToken)
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
         const profile = await this.sdk.me(this.sdk.getRefreshToken());
         const user: User = {
@@ -39,7 +39,7 @@ export class AuthService {
         return user;
       } else if (!sessionToken || this.sdk.isJwtExpired(sessionToken)) {
         try {
-          await this.sdk.refresh();
+          await this.sdk.refresh(this.sdk.getRefreshToken());
           const profile = await this.sdk.me(this.sdk.getRefreshToken());
           const user: User = {
             name: profile.data.name || 'No Name Set',

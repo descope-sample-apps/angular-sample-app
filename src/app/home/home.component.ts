@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { Component, inject } from '@angular/core';
+import { DescopeAuthService } from '@descope/angular-sdk';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +9,18 @@ import { AuthService } from '../auth.service';
 export class HomeComponent {
   user: any;
 
-  constructor(private authService: AuthService) {}
+  private authService = inject(DescopeAuthService);
 
   ngOnInit(): void {
-    this.authService
-      .validateSession()
-      .then((user) => {
-        this.user = user;
-      })
-      .catch(() => {
-        this.user = null;
-      });
+    this.authService.user$.subscribe((descopeUser) => {
+			if (descopeUser.user) {
+				this.user = {
+          name: descopeUser.user.name ?? '',
+          email: descopeUser.user.email || 'test@descope.com',
+          role: descopeUser.data.role || 'No Role Set',
+          picture: descopeUser.data.picture || '',
+        };
+			}
+		});
   }
 }

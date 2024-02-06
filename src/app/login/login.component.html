@@ -34,6 +34,11 @@
         </h1>
       </a>
     </header>
-    <descope-wc />
+    <descope
+      flowId="sign-up-or-in"
+     (success)="onSuccess($event)"
+     (error)="onError($event)"
+     theme="os"
+    ></descope>
   </body>
 </html>
