@@ -29,7 +29,7 @@ git clone git@github.com:descope-sample-apps/angular-webjs-sample-app.git
 2. Install dependencies:
 ```bash
 cd descope-angular-app
-npm install
+yarn install
 ```
 
 3. Setup environment variables:
@@ -50,7 +50,7 @@ export const environment = {
 To start the application, run:
 
 ```bash
-ng serve
+yarn start
 ```
 
 Navigate to `http://localhost:4200/` in your browser.

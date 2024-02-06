@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.descopeProjectId = environment.descopeProjectId;
     this.descopeBaseURL = environment.baseURL;
-    //this.initDescopeWc();
   }
 
   onSuccess(e: CustomEvent) {
