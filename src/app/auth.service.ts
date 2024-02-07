@@ -26,7 +26,6 @@ export class AuthService {
   async getUserData(): Promise<User> {
     try {
       const sessionToken = this.sdk.getSessionToken();
-      console.log("here")
       console.log(sessionToken)
       if (sessionToken && !this.sdk.isJwtExpired(sessionToken)) {
         const profile = await this.sdk.me(this.sdk.getRefreshToken());
