@@ -17,8 +17,8 @@ export class HomeComponent {
 				this.user = {
           name: descopeUser.user.name ?? '',
           email: descopeUser.user.email || 'test@descope.com',
-          role: descopeUser.data.role || 'No Role Set',
-          picture: descopeUser.data.picture || '',
+          role: descopeUser.user.roleNames || 'No Role Set',
+          picture: descopeUser.user.picture || '',
         };
 			}
 		});
