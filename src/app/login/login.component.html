@@ -34,11 +34,13 @@
         </h1>
       </a>
     </header>
-    <descope
-      flowId="sign-up-or-in"
-     (success)="onSuccess($event)"
-     (error)="onError($event)"
-     theme="os"
-    ></descope>
+    <div style="max-width: 1000px; margin: 0 auto; place-items: center;">
+      <descope
+        flowId="sign-up-or-in"
+      (success)="onSuccess($event)"
+      (error)="onError($event)"
+      theme="os"
+      ></descope>
+    </div>
   </body>
 </html>
