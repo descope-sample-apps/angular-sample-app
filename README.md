@@ -19,17 +19,15 @@ This sample app demonstrates how to integrate the Descope authentication service
 
 ## Installation 💿
 
-> **Note:** If you don't already have the Angular CLI, install it before you follow the rest of the guide. You can do so with the following command: `npm install -g @angular/cli`
-
 1. Clone the repository:
 ```bash
-git clone https://github.com/YourUsername/descope-angular-app.git
+git clone git@github.com:descope-sample-apps/angular-webjs-sample-app.git
 ```
 
 2. Install dependencies:
 ```bash
 cd descope-angular-app
-npm install
+yarn install
 ```
 
 3. Setup environment variables:
@@ -50,7 +48,7 @@ export const environment = {
 To start the application, run:
 
 ```bash
-ng serve
+yarn start
 ```
 
 Navigate to `http://localhost:4200/` in your browser.

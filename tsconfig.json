@@ -18,6 +18,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "typeRoots": ["./node_modules/@descope"],
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { DescopeAuthService } from '@descope/angular-sdk';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,23 +16,27 @@ export class DashboardComponent implements OnInit {
     'Edited the profile',
     'Created a new project',
   ];
+  constructor(
+    private router: Router
+  ) {}
 
-  constructor(public authService: AuthService, private router: Router) {}
+  private authService = inject(DescopeAuthService);
 
   ngOnInit(): void {
-    this.authService
-      .getUserData()
-      .then((user) => {
-        this.user = user;
-      })
-      .catch(() => {
-        this.user = null;
-        this.router.navigate(['/login']);
-      });
+    this.authService.user$.subscribe((descopeUser) => {
+			if (descopeUser.user) {
+				this.user = {
+          name: descopeUser.user.name ?? '',
+          email: descopeUser.user.email || 'test@descope.com',
+          role: descopeUser.user.roleNames || 'No Role Set',
+          picture: descopeUser.user.picture || '',
+        };
+			}
+		});
   }
 
-  async logout(): Promise<void> {
-    await this.authService.logout();
-    this.router.navigate(['/login']);
+  async logout() {
+    this.authService.descopeSdk.logout();
+    this.router.navigate(['/']);
   }
 }

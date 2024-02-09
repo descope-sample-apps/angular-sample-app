@@ -20,27 +20,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.descopeProjectId = environment.descopeProjectId;
     this.descopeBaseURL = environment.baseURL;
-    this.initDescopeWc();
   }
 
-  private initDescopeWc(): void {
-    const wcElement = this.renderer.createElement('descope-wc');
+  onSuccess(e: CustomEvent) {
+		console.log('SUCCESSFULLY LOGGED IN', e.detail);
+    this.router.navigate(['/dashboard']);
 
-    this.renderer.setAttribute(wcElement, 'project-id', this.descopeProjectId);
-    this.renderer.setAttribute(wcElement, 'base-url', this.descopeBaseURL);
-    this.renderer.setAttribute(wcElement, 'flow-id', 'sign-up-or-in');
-    this.renderer.setAttribute(wcElement, 'theme', 'light');
-    this.renderer.setAttribute(wcElement, 'persistTokens', 'true');
+	}
 
-    const parentElement = this.elRef.nativeElement;
-    this.renderer.appendChild(parentElement, wcElement);
-
-    const onSuccess = (e: CustomEvent) => {
-      this.router.navigate(['/dashboard']);
-    };
-    const onError = (err: ErrorEvent) => console.log(err);
-
-    this.renderer.listen(wcElement, 'success', onSuccess);
-    this.renderer.listen(wcElement, 'error', onError);
-  }
+	onError(e: CustomEvent) {
+		console.log('ERROR FROM LOG IN FLOW', e.detail);
+	}
 }
