@@ -1,8 +1,8 @@
-<img width="1400" alt="Monosnap Github Profile Header Generator 2023-07-20 23-09-34" src="https://github.com/descope-sample-apps/angular-webjs-sample-app/assets/32936811/e4452fcf-e566-4795-bb56-2e677aa8bcf0">
+<img width="1400" alt="image" src="https://github.com/descope-sample-apps/angular-sample-app/assets/32936811/c43be1ec-3d96-4d4f-9ac3-f4be474d5732">
 
 ---
 
-This sample app demonstrates how to integrate the Descope authentication service into an Angular application. This application includes a login screen using Descope Web Component, a user dashboard to display user information and a navigation bar that dynamically adjusts based on the user's authentication state.
+This sample app demonstrates how to integrate the Descope authentication service into an Angular application. This application includes a login screen using Descope Angular SDK, a user dashboard to display user information and a navigation bar that dynamically adjusts based on the user's authentication state.
 
 ## Table of Contents 📝
 
@@ -21,7 +21,7 @@ This sample app demonstrates how to integrate the Descope authentication service
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:descope-sample-apps/angular-webjs-sample-app.git
+git clone git@github.com:descope-sample-apps/angular-sample-app.git
 ```
 
 2. Install dependencies:
