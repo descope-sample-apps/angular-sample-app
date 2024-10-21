@@ -20,7 +20,11 @@ export class HomeComponent {
           role: descopeUser.user.roleNames || 'No Role Set',
           picture: descopeUser.user.picture || '',
         };
-			}
+			} else {
+        // If the user is logged out, clear the user details
+        this.user = null;
+        // Optionally, trigger One Tap or another login flow here
+      }
 		});
   }
 }
