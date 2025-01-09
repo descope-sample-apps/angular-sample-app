@@ -1,5 +1,0 @@
-export const environment = {
-  production: false,
-  descopeProjectId: '<Descope Project ID>',
-  baseURL: "https://api.descope.com"
-};
