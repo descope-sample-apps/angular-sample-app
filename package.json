@@ -18,9 +18,12 @@
     "@angular/platform-browser": "^18.2.4",
     "@angular/platform-browser-dynamic": "^18.2.4",
     "@angular/router": "^18.2.4",
-    "@descope/angular-sdk":"0.7.11",
+    "@descope/angular-sdk": "0.7.11",
+    "@descope/web-js-sdk": "^1.26.1",
+    "@reduxjs/toolkit": "^2.6.0",
     "angular-google-charts": "^2.2.3",
     "autoprefixer": "^10.4.17",
+    "redux": "^5.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
@@ -30,15 +33,27 @@
     "@angular-devkit/build-angular": "^18.2.4",
     "@angular/cli": "~18.2.4",
     "@angular/compiler-cli": "^18.2.4",
+    "@babel/runtime": "^7.26.9",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^22.13.9",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "8.4.41",
+    "postcss-import": "15.1.0",
     "postcss-loader": "^8.0.0",
     "tailwindcss": "^3.3.3",
     "typescript": "<5.5.4"
+  },
+  "engines": {
+    "node": ">=20",
+    "yarn": ">=3"
+  },
+  "volta": {
+    "node": "20.18.3",
+    "yarn": "3.8.7"
   }
 }

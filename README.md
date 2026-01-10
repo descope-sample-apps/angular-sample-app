@@ -21,7 +21,7 @@ This sample app demonstrates how to integrate the Descope authentication service
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:descope-sample-apps/angular-sample-app.git
+git clone https://github.com/descope-sample-apps/angular-sample-app.git
 ```
 
 2. Install dependencies:
@@ -40,6 +40,7 @@ yarn install
 export const environment = {
     production: false,
     descopeProjectId: "<Descope Project ID>",
+    baseURL: "http://localhost:4200/"
 };
 ```
 
