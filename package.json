@@ -17,7 +17,7 @@
     "@angular/forms": "^18.2.4",
     "@angular/platform-browser": "^18.2.4",
     "@angular/platform-browser-dynamic": "^18.2.4",
-    "@angular/router": "^18.2.4",
+    "@angular/router": "^20.0.0",
     "@descope/angular-sdk":"0.7.11",
     "angular-google-charts": "^2.2.3",
     "autoprefixer": "^10.4.17",
